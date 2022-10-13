@@ -15,19 +15,19 @@
 <nav class="navbar navbar-expand navbar-light bg-light">
     <ul class="nav navbar-nav">
         <li class="nav-item">
-            <a class="nav-link active" href="index.html" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="page1">Page 1</a>
+            <a class="nav-link" href="{% url 'pageOne' %}">Page 1</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="page2">Page 2</a>
+            <a class="nav-link" href="{% url 'pageTwo' %}">Page 2</a>
         </li>
     </ul>
 </nav>
 
 <!-- Content -->
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum labore beatae assumenda, quisquam nemo quos in alias id corporis unde voluptatem deserunt, maiores soluta voluptates consequuntur officiis. Est, deserunt quod.</p>
+<h2>Acá iría un resumen de la página</h2>
 <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
     <ol class="carousel-indicators">
         <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
