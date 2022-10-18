@@ -16,7 +16,6 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
                 ('number', models.CharField(max_length=10)),
-                ('picture', models.ImageField(height_field='200', max_length=2500, upload_to='images/%code', width_field='100')),
                 ('phone', models.CharField(max_length=15)),
                 ('email', models.EmailField(max_length=254)),
             ],
