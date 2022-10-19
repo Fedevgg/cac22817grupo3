@@ -1,2 +1,18 @@
 {% extends 'core/base.html'%}
 {% block title %}Products{% endblock title %}
+
+{% block content %}
+
+<div class="productGallery">
+    {% for product in Products %}
+    <div class="productContainer">
+        <tr><img src="{{product.image}}" alt="{{product.codename}}.jpg"> </tr>
+        <tr>{{product.name}} marca {{product.brand}}</tr>
+        <tr>{{product.price}}</tr>
+        <tr>{{product.code}}</tr>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content%}
+{% block footer %}{% endblock footer %}
