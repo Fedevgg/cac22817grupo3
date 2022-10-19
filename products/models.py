@@ -8,21 +8,17 @@ from unittest.util import _MAX_LENGTH
 
 class Product(models.Model):
 
-#    def uploadName (id, name):
-#        return '{0}_{1}'.format(id, name)
-
     name = models.CharField(max_length=50)
     brand = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='cac22817grupo3/uploads')
 
     if brand == 'Philips':
-        code = '{0}{1}'.format('001',id)
+        codename = '{0}{1}'.format('001',id)
     elif brand == 'HP':
-        code = '{0}{1}'.format('002',id)
+        codename = '{0}{1}'.format('002',id)
     else: 
-        code = '{0}{1}'.format('003',id)
-
+        codename = '{0}{1}'.format('003',id)
 
     class Meta:
         verbose_name = ("Product")
@@ -33,7 +29,7 @@ class Product(models.Model):
 
 class Client(models.Model):
     name = models.CharField(max_length=100)
-    number = models.CharField(max_length=10)
+#    number = models.CharField(max_length=10)
     phone = models.CharField(max_length=15)
     email = models.EmailField(max_length=254)
     

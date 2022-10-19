@@ -2,13 +2,14 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+
 .galeria img{
     width: 20%;
-    height: auto;
+    height: 400px;
     padding: 20px;     
 }
 
-   main{
+main{
     margin-top: 50px;
     width: 100%;
   }
