@@ -1,7 +1,7 @@
 from django.shortcuts import render
-
+from .models import Product
 # Create your views here.
 
 def page1(request):
-    #productForSlide = products.objects.all()
-    return render(request, 'products/page1.html')
+    products = Product.objects.all()
+    return render(request, 'products/page1.html',{'products': products})

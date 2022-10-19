@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from core import views as core_views
 from products import views as product_views
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,3 +25,7 @@ urlpatterns = [
     path('page1/', product_views.page1, name='pageOne'),
     path('page2/', core_views.page2, name='pageTwo'),
 ]
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -1,13 +1,14 @@
 {% extends 'core/base.html'%}
 {% block title %}Products{% endblock title %}
 
+
 {% block content %}
 
 <div class="productGallery">
-    {% for product in Products %}
+    {% for product in products %}
     <div class="productContainer">
-        <tr><img src="{{product.image}}" alt="{{product.codename}}.jpg"> </tr>
-        <tr>{{product.name}} marca {{product.brand}}</tr>
+        <tr><img src="{{product.image.url}}" alt="{{product.codename}}.jpg"> </tr>
+        <tr><h3>{{product.name}} marca {{product.brand}}</h3></tr>
         <tr>{{product.price}}</tr>
         <tr>{{product.code}}</tr>
     </div>
@@ -15,4 +16,4 @@
 </div>
 
 {% endblock content%}
-{% block footer %}{% endblock footer %}
+
