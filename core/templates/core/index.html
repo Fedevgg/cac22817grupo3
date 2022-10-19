@@ -1,39 +1,7 @@
-<<<<<<< HEAD
-{% extends "core/base.html" %}
+{% extends 'core/base.html' %}
+
+{% block title %}Home{% endblock title %}
 {% load static %}
-{% block title %}Index{% endblock %}
-{% block content %}
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-    <title>{% block title %}Home{% endblock title %}</title>
-    
-</head>
-<body>
-
-<!-- Navigation bar -->
-{% block nav %}
-<nav class="navbar navbar-expand navbar-light bg-light">
-    <ul class="nav navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'pageOne' %}">Page 1</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'pageTwo' %}">Page 2</a>
-        </li>
-    </ul>
-</nav>
-{% endblock nav %}
->>>>>>> 98e78dd83be4af5258b448b6ea952030876af77d
 
 <!-- Content -->
 {% block content %}
@@ -45,13 +13,8 @@
         <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
-<<<<<<< HEAD
-        <div class="carousel-item active galeria">
-            <img src="{% static 'core/figs/django.jpg' %}" class="d-block w-100" alt="primera foto">
-=======
         <div class="carousel-item active">
-            <img src="{% %}" class="w-100 d-block" alt="First slide">
->>>>>>> 98e78dd83be4af5258b448b6ea952030876af77d
+            <img src="{% static 'core\figs\django.jpg' %}" class="d-block w-100" alt="First slide">
         </div>
         <div class="carousel-item galeria">
             <img src="{% static 'core/figs/feliz.jpg' %}" class="d-block w-100" alt="segunda foto">
@@ -71,18 +34,3 @@
 </div>
 {% endblock content %}
 
-<!-- Footer -->
-{% block footer %}
-<div class="d-flex">
-        <div class="flex-grow-1 ms-3">
-            <h5 class="mt-0">footer</h5>
-            <p>This is some content from a media component. You can replace this with any content and adjust it as
-                needed.</p>
-        </div>
-        <div>
-            <img src="{% static 'core/figs/django.jpg' %}" class="d-block w-100" alt="foto django">
-        </div>
-</div>
-{% endblock footer %}
-
-{% endblock %}
