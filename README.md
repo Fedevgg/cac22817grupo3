@@ -13,8 +13,8 @@ Nueva configuración para cumplir con la totalidad del projecto:
 - Se deben utilizar Django Forms que cumplan con la siguientes características:
     > Al menos un formulario debe poseer validaciones en el front-end y en el back-end
     > Debe haber al menos un formulario asociado a un template. (contact)
-    > Debe haber al menos un formulario basado en clases. 
-    > Debe haber al menos un formulario asociado a un modelo 
+    > (cumplido) Debe haber al menos un formulario basado en clases. 
+    > (cumplido) Debe haber al menos un formulario asociado a un modelo 
 
 - Deben existir al menos dos modelos distintos que posean una relación de uno a muchos  
 - (provisorio SQLite) El proyecto debe funcionar utilizando un servidor de base de datos local dentro de los soportados (en el curso se recomienda PostgreSQL), y debe poseer las migraciones necesarias para su funcionamiento. 
@@ -23,10 +23,12 @@ Nueva configuración para cumplir con la totalidad del projecto:
 
 --------------------------------------------------------------------------------------
 To-do
-- Acomodar el carousel de index.html a modo que tomo imagenes de la media_root
-- Acomodar el nav para que muestre el boton desplegable
-- Acomodar products_patterns a modo de que levante la DetailView
-- Hacer que el formulario de contacto tenga validaciones en el back
+- (Fernando) Acomodar el carousel de index.html a modo que tomo imagenes de la media_root
+- (Fernando) Acomodar products_patterns a modo de que levante la DetailView
+- (Luciana) Formulario de registro (idCliente, passCliente)
+- (Iran) Relación 1 a muchos carrito de compras-> acceso a carrito de compras (pkProducto, cantidad, precio)
+- (Fede) Acomodar el css del nav para que muestre el boton desplegable
+- (Fede) Hacer que el formulario de contacto se conecte con la DB
 
 --------------------------------------------------------------------------------------
 Objetivos de la página:

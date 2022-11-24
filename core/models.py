@@ -7,7 +7,7 @@ class Contact(models.Model):
     apellido = models.CharField(max_length=50)
     edad = models.SmallIntegerField()
     correo = models.EmailField(max_length=254)
-    solicitud = models.TextField()
+    consulta = models.TextField()
 
     def __str__(self):
         return self.nombre
