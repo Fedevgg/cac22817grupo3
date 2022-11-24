@@ -5,18 +5,36 @@
 
 <!-- Content -->
 {% block content %}
+
 <header>
     <h1>CONTACTO</h1>
 </header>
 <main>
+    <div class="err"></div>
     <div class="container">
-        <form class='form' method='POST' onsubmit='return false;'>
-        {% csrf_token %}
-        {{form}}
-        <div class="btn">
-            <input type="submit" id="boton" value="Enviar">
+        <div class="form">
+            <h3>Dejanos tu consulta</h3>
+            <form action="#" method="POST" id="formulario" onsubmit="return false;">
+                <label for="nombre">Nombre</label><br>
+                <input type="text" name="nombre" id="nombre" class="field" placeholder="Ingrese nombre">
+                <br><br>
+                <label for="apellido">Apellido</label><br>
+                <input type="text" name="apellido" id="apellido" class="field" placeholder="Ingrese Apellido">
+                <br><br>
+                <label for="edad">Edad</label><br>
+                <input type="number" class="field" name="edad" id="edad">
+                <br><br>
+                <label for="mail">E-mail</label><br>
+                <input type="email" name="email" id="email" class="field" placeholder="Ingrese e-mail">
+                <br><br>
+                <label for="texto">Solicitud</label><br>
+                <textarea name="texto" id="texto" cols="30" rows="10" class="field"></textarea>
+                <br><br>
+                <div class="btn">
+                    <input type="submit" id="boton" value="Enviar">
+                </div>
+            </form>
         </div>
-        </form>
         <div class="map">
             <h3>Nuestra sede</h3>
             <iframe

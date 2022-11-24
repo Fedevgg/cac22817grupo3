@@ -1,7 +1,9 @@
-from django.shortcuts import render
 from .models import Product
+from django.views.generic import ListView, DetailView
 # Create your views here.
 
-def page1(request):
-    products = Product.objects.all()
-    return render(request, 'products/page1.html',{'products': products})
+class CatalogView(ListView):
+    model = Product
+    
+class ItemView(DetailView):
+    model = Product
