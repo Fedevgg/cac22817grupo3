@@ -1,0 +1,32 @@
+{% extends 'core/base.html'%}
+{% block title %}Catálogo{% endblock title %}
+
+{% block navbar %}{% endblock %}
+
+
+{% block content %}
+<section class="jumbotron text-center">
+      <h1 class="jumbotron-heading">Catálogo de productos</h1>
+      <p class="lead text-muted">A continuación están nuestros productos en oferta</p>
+</section>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            {% for product in product_list %}
+            <div class="col-md-4">
+                <a href = "{% url 'catalog:product' product.name|slugify %}">
+                    <div class="card mb-4 box-shadow">
+                        <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" src="{{product.image.url}}" alt={{product.codename}}.jpg>
+                        <div class="card-body">
+                        <p class="card-text">{{product.name}} marca {{product.brand}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content%}

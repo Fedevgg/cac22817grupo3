@@ -1,0 +1,5 @@
+django==3.2
+jinja2
+pillow
+django-ckeditor
+psycopg2
