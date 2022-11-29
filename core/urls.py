@@ -10,7 +10,7 @@ core_patterns = [
         path('registrarse/', views.core_registrarse, name='registrarse'),
     path('login/', views.core_login, name='login'),
     path('logout/',
-         auth_views.LogoutView.as_view(template_name='cac/index.html'), name='logout'),
+         auth_views.LogoutView.as_view(template_name='core/index.html'), name='logout'),
     path('compras/', views.compras,
          name='compras')
 ]
