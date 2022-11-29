@@ -1,50 +1,29 @@
-/* @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-*{
-    display: grid;
-    margin: 0;
-    padding: 0;
-}
-
-head{
-    display: none
-}
-
-body{
-    background-color: rgb(82, 80, 80);
-    font-family: 'Roboto', sans-serif;
-    transition: 0.25s;
-}
-
-nav{
-    grid-row: 1/2;
-}
-
-main {
-    background-color: rgb(82, 80, 80);
-    font-family: 'Roboto', sans-serif;
-    transition: 0.25s;
-}
-
-footer{
-    align-items: center;
+body {
+    display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #181818dc;
-    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    transition: 0.25s;
+
 }
 
 header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
     color: #fff;
     background-color: #181818dc;
     transition: 0.25s;
 }
 
-.header_text{
+.container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: space-around;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .map {
@@ -109,6 +88,16 @@ textarea {
 .icons {
     display: flex;
     justify-content: space-evenly;
+}
+
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #181818dc;
+    color: #fff;
 }
 
 .icon {
