@@ -46,6 +46,21 @@
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
          </form> -->
+
+         {% if perms.core %}
+         <li><a href="{% url 'compras' %}" class="nav-link px-2 link-dark">Carrito de compras</a></li>
+     {% endif %}
+ </ul>
+ <div class="col-md-3 text-end">
+ {% if user.is_authenticated %}
+     {% comment %} <p>Bienvenido\a, {{ user.username }}.</p> {% endcomment %}
+     <p type="text" style="display: inline" class="">Bienvenido\a, {{ user.username }}.</p>
+     <a type="button" href="{% url 'logout' %}" class="btn btn-outline-primary me-2">Cerrar Sesión</a>
+ {% else %}
+     <a type="button" href="{% url 'login' %}" class="btn btn-outline-primary me-2">Iniciar Sesión</a>
+     <a type="button" href="{% url 'registrarse' %}" class="btn btn-dark">Registrarse</a>
+ {% endif %}
+ </div>
           </div>
         </div>
       </nav>
