@@ -38,14 +38,24 @@
                 <a class="nav-link" href="{%url 'catalog:catalog'%}">Catálogo</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="{%url 'contact'%}">Contacto</a>
+                <a class="nav-link " href="{%url 'contact'%}">Contacto <i class="fa-solid fa-envelope"></i></a>
               </li>
-            </ul>
-         <!-- <form class="d-flex" role="search">
-           {% csrf_token %}
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-         </form> -->
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link " href="{% url 'compras' %}" >Carrito de compras <i class="fa-solid fa-cart-shopping"></i></a>
+              </li>
+                {% endif %}
+           </ul>
+ <div class="col-md-3 text-end">
+ {% if user.is_authenticated %}
+     {% comment %} <p>Bienvenido\a, {{ user.username }}.</p> {% endcomment %}
+     <p type="text" style="display: inline" class="">Bienvenido\a, {{ user.username }}.</p>
+     <a type="button" href="{% url 'logout' %}" class="btn btn-outline-primary me-2">Cerrar Sesión</a>
+ {% else %}
+     <a type="button" href="{% url 'login' %}" class="btn btn-outline-primary me-2">Iniciar Sesión</a>
+     <a type="button" href="{% url 'registrarse' %}" class="btn btn-dark">Registrarse</a>
+ {% endif %}
+ </div>
           </div>
         </div>
       </nav>
