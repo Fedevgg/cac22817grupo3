@@ -7,22 +7,58 @@ head{
     display: none;
 }
 nav {
-    grid-row-start: -1;
-    grid-row-end: 2;
+    grid-row: 1/2;
+    grid-column: 1/-1;
 }
-p,h1{
-    margin: 0;
-    padding: 0;
-}
-.header_text{
-    align-content: space-around;
-    justify-content: space-around;
-    background-color: black;
-    color: white;
-}
+
 main {
-    grid-row-start: 3;
-    grid-row-end: 10;
+    grid-row: 3/10;
+    grid-column: -1/-1;
+}
+header{
+    grid-row:-1/2;
+    color: white;
+    background-color: rgb(16, 0, 87);
+    flex-direction: column;
+}
+.header_text>h1,.header_text>p{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.carousel-item active{
+    width: 100rem;
+    height: 70rem;
+}
+
+
+.map,.contact_form{
+    padding: 0.5rem;
+    margin: 1rem;
+    grid-row: 1/-1;
+}
+
+.contact_form{
+    grid-column: 1/2;
+}
+
+.map{
+    grid-column: 3/12;
+}
+
+.map>h3{
+    grid-column: 1/-1;
+    grid-row: 1/12;}
+.map>p{
+    grid-column: 1/-1;
+    grid-row: 2/12;}
+
+.gmap{
+    grid-column: 1/-1;
+    grid-row: 3/12;
+    width: 100%;
+    height: 100%;
 }
 
 footer{
@@ -31,7 +67,8 @@ footer{
 }
 .footer_text{
     display: flex;
-    align-self: center
+    justify-self: center;
+    flex-direction: column;
 }
 .icon{
     width: 2rem;
@@ -44,3 +81,70 @@ footer{
     display: flex;
     justify-content: center;    
 }
+
+
+/* Reservado para armar las medias querys
+*{
+    display: grid;
+    margin: 0;
+    padding: 0;
+}
+head{
+    display: none;
+}
+nav {
+    grid-row-start: -1;
+    grid-row-end: 2;
+}
+
+header{
+    color: white;
+    background-color: black;
+    flex-direction: column;
+}
+.header_text>h1,.header_text>p{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+main {
+    grid-row-start: 3;
+    grid-row-end: 10;
+}
+
+footer{
+    grid-row-start: 10;
+    grid-row-end: 12;
+}
+.footer_text{
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+}
+.icon{
+    width: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    background-color: white;
+    border:0.5rem;
+}
+.icons{
+    display: flex;
+    justify-content: center;    
+}
+
+.map{
+    display: grid;
+}
+
+.map>p{
+    display: flex;
+    flex-direction: row;
+}
+
+.gmap{
+    grid-column: 1/-1;
+    grid-row: 8/10;
+    width: 100%;
+    min-height: 30rem;
+} */
