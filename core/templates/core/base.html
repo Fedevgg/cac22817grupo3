@@ -38,19 +38,14 @@
                 <a class="nav-link" href="{%url 'catalog:catalog'%}">Catálogo</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="{%url 'contact'%}">Contacto</a>
+                <a class="nav-link " href="{%url 'contact'%}">Contacto <i class="fa-solid fa-envelope"></i></a>
               </li>
-            </ul>
-         <!-- <form class="d-flex" role="search">
-           {% csrf_token %}
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-         </form> -->
-
-         {% if perms.core %}
-         <li><a href="{% url 'compras' %}" class="nav-link px-2 link-dark">Carrito de compras</a></li>
-     {% endif %}
- </ul>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link " href="{% url 'compras' %}" >Carrito de compras <i class="fa-solid fa-cart-shopping"></i></a>
+              </li>
+                {% endif %}
+           </ul>
  <div class="col-md-3 text-end">
  {% if user.is_authenticated %}
      {% comment %} <p>Bienvenido\a, {{ user.username }}.</p> {% endcomment %}
