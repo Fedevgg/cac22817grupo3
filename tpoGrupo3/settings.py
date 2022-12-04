@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-gbeh&5e9t2c+zh3(dyg2p12)be&wzn$cxt6vpa9*7bo*q2n%57
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'core',
     'products.apps.ProductsConfig',
     'ckeditor',
+    'cart',
 ]
 
 MIDDLEWARE = [
