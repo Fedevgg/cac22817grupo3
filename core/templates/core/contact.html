@@ -1,42 +1,44 @@
 {% extends 'core/base.html' %}
-
 {% block title %}Contacto{% endblock title %}
 {% load static %}
-
-<!-- Content -->
 {% block content %}
 <header>
-    <h1>CONTACTO</h1>
+    <div class="header_text">
+        <h1>Contacto</h1>
+    </div>
 </header>
-<main>
-    <div class="container">
-        <form class='form' method='POST' onsubmit='return false;'>
-        {% csrf_token %}
-        {{form}}
+
+<div class="container">
+    <form class='contact_form' method='POST'>
+        <h3>Dejanos tu consulta en el siguiente formulario</h3>
+    {% csrf_token %}
+    {{form}}
         <div class="btn">
             <input type="submit" id="boton" value="Enviar">
         </div>
-        </form>
-        <div class="map">
-            <h3>Nuestra sede</h3>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.9409930954935!2d-58.40815704947996!3d-34.6056535803631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf2a00d73df%3A0xc90b4ce1a7523378!2sAv.%20Pueyrred%C3%B3n%20400%2C%20C1032ABQ%20CABA!5e0!3m2!1ses!2sar!4v1617796104662!5m2!1ses!2sar"
-                width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            <p>Dirección: Av. Pueyrredón 400 C1032ABQ CABA</p>
+    {{ message }}
+    </form>
+    <div class="map">
+        <h3>Nuestra sede</h3>
+        <p>Dirección: Av. Pueyrredón 400 C1032ABQ CABA</p>
+        <iframe class="gmap"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.9409930954935!2d-58.40815704947996!3d-34.6056535803631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf2a00d73df%3A0xc90b4ce1a7523378!2sAv.%20Pueyrred%C3%B3n%20400%2C%20C1032ABQ%20CABA!5e0!3m2!1ses!2sar!4v1617796104662!5m2!1ses!2sar"
+            allowfullscreen="false" loading="lazy"></iframe> 
         </div>
-    </div>
-    <div class="fondo_transparente">
-        <div class="modal">
-            <div class="modal_mensaje">
-                <h2>MENSAJE ENVIADO</h2>
-                <lord-icon src="https://cdn.lordicon.com/rhvddzym.json" trigger="loop" delay="1000"
-                    style="width:100px;height:100px">
-                </lord-icon>
-                <div>
-                    <button id="close_modal">cerrar</button>
-                </div>
+</div>
+<!-- 
+<div class="fondo_transparente">
+    <div class="modal">
+        <div class="modal_mensaje">
+            <h2>MENSAJE ENVIADO</h2>
+            <lord-icon src="https://cdn.lordicon.com/rhvddzym.json" trigger="loop" delay="1000"
+                style="width:100px;height:100px">
+            </lord-icon>
+            <div>
+                <button id="close_modal">cerrar</button>
             </div>
         </div>
     </div>
-</main>
+</div> 
+-->
 {% endblock content %}

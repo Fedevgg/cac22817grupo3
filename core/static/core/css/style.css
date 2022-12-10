@@ -1,168 +1,89 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-body {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-family: 'Roboto', sans-serif;
+*{
+    display: grid;
     margin: 0;
-    transition: 0.25s;
-
+    padding: 0;
 }
-
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    color: #fff;
-    background-color: #181818dc;
-    transition: 0.25s;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.map {
-    width: 50%;
-    margin: 25px;
-    height: 400px;
-    box-shadow: 1px black;
-    box-shadow: 0 0 20px #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 5px;
-
-}
-
-.form {
-    margin: 25px;
-    border-radius: 5px;
-    box-shadow: 0 0 20px #000000;
-    padding: 40px;
-    height: 550px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-form {
-    font-size: 0.8em;
-}
-
-input,
-textarea {
-    outline: none;
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 300px;
-}
-
-.btn {
-    align-items: center;
-    text-align: center;
-}
-
-.field:focus {
-    box-shadow: 0 0 20px #0004ff;
-    transition: 0.5s;
-}
-
-#boton:focus {
-    box-shadow: 0 0 20px #0004ff;
-    transition: 0.5s;
-
-}
-
-::-webkit-scrollbar {
+head{
     display: none;
 }
-
-
-
-.icons {
-    display: flex;
-    justify-content: space-evenly;
+nav {
+    grid-row: 1/2;
+    grid-column: 1/-1;
 }
 
-
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+main {
+    grid-row: 3/10;
+    grid-column: -1/-1;
+}
+header{
+    grid-row:-1/2;
+    color: white;
+    background-color: rgb(16, 0, 87);
     flex-direction: column;
-    background-color: #181818dc;
-    color: #fff;
 }
-
-.icon {
-    margin: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
-    border-radius: 100px;
-    padding: 15px;
-}
-
-.err {
-    height: 100px;
-    background-color: #ff0000d5;
-    color: #fff;
-    display: none;
-    align-items: center;
+.header_text>h1,.header_text>p{
+    display: flex;
+    align-content: center;
     justify-content: center;
 }
 
-.fondo_transparente {
-    top: 0;
-    left: 0;
-    position: absolute;
-    height: 100%;
+.carousel-item active{
+    width: 100rem;
+    height: 70rem;
+}
+
+.map,.contact_form{
+    padding: 0.5rem;
+    margin: 1rem;
+    grid-row: 1/-1;
+}
+
+.contact_form{
+    grid-column: 1/2;
+}
+
+.map{
+    grid-column: 3/12;
+}
+
+.map>h3{
+    grid-column: 1/-1;
+    grid-row: 1/12;}
+.map>p{
+    grid-column: 1/-1;
+    grid-row: 2/12;}
+
+.gmap{
+    grid-column: 1/-1;
+    grid-row: 3/12;
     width: 100%;
-    display: none;
+    height: 100%;
 }
 
-@keyframes modal {
-    from {
-        top: -330px;
-        opacity: 0;
-    }
-
-    to {
-        top: 50%;
-        opacity: 1;
-    }
+footer{
+    grid-row-start: 11;
+    grid-row-end: 12;
+}
+.footer_text{
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+}
+.icon{
+    width: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    background-color: white;
+    border:0.5rem;
+}
+.icons{
+    display: flex;
+    justify-content: center;    
 }
 
-.modal {
-    background: rgb(255, 255, 255);
-    width: 45%;
-    height: 45%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    border-radius: 5px;
-    border: 1px black solid;
-    animation-name: modal;
-    animation-duration: 1s;
-}
-
-.modal_mensaje {
-    padding: 30px;
-    text-align: center;
-    background: #fff;
-}
-
-.modal_mensaje>p {
-    color: black;
-}
-
-#close_modal{
-    background: rgba(255, 0, 0, 0.541);
+.big-card-image{
+    display: flex;
+    width: 60rem;
+    height: 60rem;
+    align-items: center; 
 }

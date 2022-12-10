@@ -7,3 +7,4 @@ class CatalogView(ListView):
     
 class ItemView(DetailView):
     model = Product
+    template_name = 'products/product_detail.html'

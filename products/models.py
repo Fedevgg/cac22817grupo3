@@ -15,11 +15,9 @@ class Category(models.Model):
         verbose_name_plural="Categorías"
         ordering=["-id"]
 
-
-
 class Product(models.Model):
     category= models.ForeignKey(Category, on_delete=models.CASCADE)
-    slug= models.SlugField()
+    #slug= models.SlugField()
     name = models.CharField(max_length=50)
     brand = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=10, decimal_places=2)

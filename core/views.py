@@ -15,6 +15,15 @@ def contact(request):
     data = {
         'form': ContactForm()
     }
+
+    if request.method == 'POST':
+        form = ContactForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            data['message'] = "Consulta enviada"
+        else:
+            data['form'] = form
+
     return render(request, 'core/contact.html', data)
 
 def core_registrarse(request):
