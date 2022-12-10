@@ -23,12 +23,8 @@ Nueva configuración para cumplir con la totalidad del projecto:
 
 --------------------------------------------------------------------------------------
 To-do
-- (Fernando) Acomodar el carousel de index.html a modo que tomo imagenes de la media_root
-- (Fernando) Acomodar products_patterns a modo de que levante la DetailView
-- Formulario de registro (idCliente, passCliente) (Luciana)
 - (Iran) Relación 1 a muchos carrito de compras-> acceso a carrito de compras (pkProducto, cantidad, precio)
 - (en proceso) Acomodar el css del nav para que muestre el boton desplegable (Fede)
-- (cumplido) Hacer que el formulario de contacto se conecte con la DB
 
 --------------------------------------------------------------------------------------
 Objetivos de la página:
