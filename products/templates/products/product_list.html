@@ -14,14 +14,12 @@
         <div class="row">
             {% for product in product_list %}
             <div class="col-md-4">
-                <a href = "{% url 'catalog:product' product.name|slugify %}">
+                <a href = "{% url 'catalog:product' product.id product.name|slugify %}">
                     <div class="card mb-4 box-shadow">
                         <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" src="{{product.image.url}}" alt="{{product.codename}}.jpg" class= "img-fluid">
                         <div class="card-body">
                         <p class="card-text">{{product.name}} marca {{product.brand}}</p>
                         </div>
-                        <!--agregar referencia a la funcion add del carrito-->
-                        <a href="cart:add" class= "btn btn-success">Añadir al carrito</a>
                     </div>
                     
             </div>

@@ -81,69 +81,9 @@ footer{
     justify-content: center;    
 }
 
-
-/* Reservado para armar las medias querys
-*{
-    display: grid;
-    margin: 0;
-    padding: 0;
-}
-head{
-    display: none;
-}
-nav {
-    grid-row-start: -1;
-    grid-row-end: 2;
-}
-
-header{
-    color: white;
-    background-color: black;
-    flex-direction: column;
-}
-.header_text>h1,.header_text>p{
+.big-card-image{
     display: flex;
-    align-content: center;
-    justify-content: center;
+    width: 60rem;
+    height: 60rem;
+    align-items: center; 
 }
-main {
-    grid-row-start: 3;
-    grid-row-end: 10;
-}
-
-footer{
-    grid-row-start: 10;
-    grid-row-end: 12;
-}
-.footer_text{
-    display: flex;
-    justify-self: center;
-    flex-direction: column;
-}
-.icon{
-    width: 2rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    background-color: white;
-    border:0.5rem;
-}
-.icons{
-    display: flex;
-    justify-content: center;    
-}
-
-.map{
-    display: grid;
-}
-
-.map>p{
-    display: flex;
-    flex-direction: row;
-}
-
-.gmap{
-    grid-column: 1/-1;
-    grid-row: 8/10;
-    width: 100%;
-    min-height: 30rem;
-} */
