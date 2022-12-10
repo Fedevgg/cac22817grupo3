@@ -9,13 +9,14 @@
 </header>
 
 <div class="container">
-    <form class='contact_form' method='POST' onsubmit='return false;'>
+    <form class='contact_form' method='POST'>
         <h3>Dejanos tu consulta en el siguiente formulario</h3>
     {% csrf_token %}
     {{form}}
         <div class="btn">
             <input type="submit" id="boton" value="Enviar">
         </div>
+    {{ message }}
     </form>
     <div class="map">
         <h3>Nuestra sede</h3>
