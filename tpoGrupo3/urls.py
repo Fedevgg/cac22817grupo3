@@ -18,11 +18,13 @@ from django.urls import path, include
 from core.urls import core_patterns
 from django.conf import settings
 from products.urls import catalog_patterns
+from cart.urls import cart_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(core_patterns)),
     path('catalog/', include(catalog_patterns)),
+    path('cart', include(cart_patterns)),
 ]
 
 if settings.DEBUG:

@@ -5,7 +5,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from core.forms import RegistrarUsuarioForm
 
-
 # Create your views here.
 
 def index(request):
@@ -55,6 +54,3 @@ def core_login(request):
     form = AuthenticationForm()
     return render(request, 'core/login.html', {'form': form, 'title': 'Log in'})
 
-
-def compras(request):
-    return render(request, "core/compras.html")
