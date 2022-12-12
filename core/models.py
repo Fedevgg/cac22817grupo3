@@ -5,7 +5,6 @@ from django.db import models
 class Contact(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
-#    edad = models.SmallIntegerField()
     correo = models.EmailField(max_length=254)
     consulta = models.TextField()
 

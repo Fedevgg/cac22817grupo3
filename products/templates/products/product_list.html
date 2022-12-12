@@ -13,16 +13,16 @@
     <div class="container">
         <div class="row">
             {% for product in product_list %}
-            <div class="col-md-4">
+            <div class="card col-md-4">
                 <a href = "{% url 'catalog:product' product.id product.name|slugify %}">
                     <div class="card mb-4 box-shadow">
                         <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" src="{{product.image.url}}" alt="{{product.codename}}.jpg" class= "img-fluid">
                         <div class="card-body">
-                        <p class="card-text mb-1">{{product.name}} marca {{product.brand}}</p>
+                        <p class="card-text mb-1 text-center">{{product.name}} marca {{product.brand}}</p>
                         {% if user.is_authenticated %}
-                        <p class="card-text mb-1">Precio de contado: ${{product.price}} más iva</p>
+                        <p class="card-text mb-1 text-center">Precio de contado: ${{product.price}} más iva</p>
                         <!--agregar referencia a la funcion add del carrito-->
-                        <a href="{% url 'add' product.id %}" class= "btn btn-success">Añadir al carrito</a>
+                        <a href="{% url 'catalog:agregar' product.id %}" class= "btn btn-success">Añadir 1 al carrito</a>
                         {% endif %}
                         </div>
                     </div>
