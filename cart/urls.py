@@ -1,9 +1,10 @@
 from django.urls import path
 from . import views
 cart_patterns = [
-    path('', views.cart_page, name='cart'),
-    path('add/<int:product_id>/', views.add_product, name='add'),
-    path('decrement/<int:product_id>/', views.decrement_product, name='decrement'),
-    path('delete/<int:product_id>/', views.delete_product, name='delete'),
-    path('clean/',views.clean_cart, name='clean')
+    path('', views.cart_view, name='cart'),
+    path('add_item/<int:target>', views.agregar_item_carrito, name='agregar'),
+    path('subs_item/<int:target>', views.restar_item_carrito, name='restar'),
+    path('del_item/<int:target>', views.borrar_item_carrito, name='borrar'),
+    path('clean/', views.limpiar_carrito, name='limpiar'),
+    path('send/', views.confirmar_carrito, name='confirmar'),
 ]

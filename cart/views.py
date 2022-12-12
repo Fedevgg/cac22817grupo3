@@ -1,34 +1,91 @@
-from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from django.urls import reverse
+from cart.models import CartItem, PedidoConfirmado
+from .forms import CartForm
 
-# Create your views here.
-from products.models import Product
-from .cart import Cart
+#class CartView(CreateView):
+#    template_name = 'cart/cart.html'
+#    # form_class = CartForm
+#    model = CartItem
+#    fields = ['cantidad']
 
-def cart_page(request):
-    products = Product.objects.all()
-    return render(request, 'cart/cart.html', {'products':products})
+def cart_view(request):
+    items = CartItem.objects.filter(user=request.user, confirmado=False)
+    
+    data = {
+        'added_items': items, # Lista de items
+        'form': CartForm()
+    }
 
-def add_product(request, product_id):
-    cart = Cart(request)
-    producto = Product.objects.get(id=product_id)
-    cart.add(producto)
-    return redirect("catalog")
+    if request.method == 'POST':
+        form = CartForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            data['message'] = "Carrito guardado"
+        else:
+            data['form'] = form
 
-def delete_product(request, product_id):
-    cart = Cart(request)
-    producto = Product.objects.get(id=product_id)
-    cart.delete(producto)
-    return redirect("catalog")
+    return render(request, 'cart/cart.html', data)
 
-def decrement_product(request, product_id):
-    cart = Cart(request)
-    producto = Product.objects.get(id=product_id)
-    cart.decrement(producto)
-    return redirect("catalog")
+def agregar_item_carrito(request, target):
+    print(target)
+    try:
+        busqueda_item = CartItem.objects.get(user=request.user, product_id_id=target)
+    except CartItem.DoesNotExist:
+        busqueda_item = None
+    if not busqueda_item:
+        item = CartItem(
+            product_id_id=target,
+            user=request.user,
+            cantidad=1,
+        )
+        item.save()
+    else:
+        busqueda_item.cantidad += 1
+        busqueda_item.save()
+    
+    return HttpResponseRedirect(reverse('cart'))
 
-def clean_cart(request):
-    cart = Cart(request)
-    cart.clean_cart()
-    return redirect("catalog")
+def restar_item_carrito(request, target):
+    try:
+        busqueda_item = CartItem.objects.get(user=request.user, product_id=target)
+    except CartItem.DoesNotExist:
+        busqueda_item = None
+    if busqueda_item:
+        if busqueda_item.cantidad > 1:     
+            busqueda_item.cantidad -= 1
+            busqueda_item.save()
+        elif busqueda_item.cantidad == 1:
+            busqueda_item.cantidad -= 1
+            busqueda_item.delete()
+    
+    return HttpResponseRedirect(reverse('cart'))
 
+def borrar_item_carrito(request, target):
+    try:
+        busqueda_item = CartItem.objects.get(user=request.user, product_id=target)
+    except CartItem.DoesNotExist:
+        busqueda_item = None
+    busqueda_item.delete()
+    
+    return HttpResponseRedirect(reverse('cart'))
 
+def limpiar_carrito(request):
+    try:
+        busqueda_item = CartItem.objects.filter(user=request.user)
+    except CartItem.DoesNotExist:
+        busqueda_item = None
+    busqueda_item.delete()
+
+    return HttpResponseRedirect(reverse('cart'))
+
+def confirmar_carrito(request):
+    try:
+        busqueda_item = CartItem.objects.filter(user=request.user, confirmado=False)
+    except CartItem.DoesNotExist:
+        busqueda_item = None
+    if busqueda_item:
+        busqueda_item.update(confirmado=True)
+    
+    return HttpResponseRedirect(reverse('cart'))
