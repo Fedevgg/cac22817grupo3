@@ -31,7 +31,7 @@ def cart_view(request):
 def agregar_item_carrito(request, target):
     print(target)
     try:
-        busqueda_item = CartItem.objects.get(user=request.user, product_id_id=target)
+        busqueda_item = CartItem.objects.get(user=request.user, product_id_id=target, confirmado=False)
     except CartItem.DoesNotExist:
         busqueda_item = None
     if not busqueda_item:
@@ -49,7 +49,7 @@ def agregar_item_carrito(request, target):
 
 def restar_item_carrito(request, target):
     try:
-        busqueda_item = CartItem.objects.get(user=request.user, product_id=target)
+        busqueda_item = CartItem.objects.get(user=request.user, product_id=target, confirmado=False)
     except CartItem.DoesNotExist:
         busqueda_item = None
     if busqueda_item:
@@ -64,7 +64,7 @@ def restar_item_carrito(request, target):
 
 def borrar_item_carrito(request, target):
     try:
-        busqueda_item = CartItem.objects.get(user=request.user, product_id=target)
+        busqueda_item = CartItem.objects.get(user=request.user, product_id=target, confirmado=False)
     except CartItem.DoesNotExist:
         busqueda_item = None
     busqueda_item.delete()
@@ -73,7 +73,7 @@ def borrar_item_carrito(request, target):
 
 def limpiar_carrito(request):
     try:
-        busqueda_item = CartItem.objects.filter(user=request.user)
+        busqueda_item = CartItem.objects.filter(user=request.user, confirmado=False)
     except CartItem.DoesNotExist:
         busqueda_item = None
     busqueda_item.delete()

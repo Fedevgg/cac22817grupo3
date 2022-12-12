@@ -16,7 +16,7 @@ def agregar_item_carrito(request, target):
     print(target)
     print(type(target))
     try:
-        busqueda_item = CartItem.objects.get(user=request.user, product_id=target)
+        busqueda_item = CartItem.objects.get(user=request.user, product_id=target, confirmado=False)
     except CartItem.DoesNotExist:
         busqueda_item = None
     if not busqueda_item:
@@ -24,6 +24,7 @@ def agregar_item_carrito(request, target):
             product_id_id=target,
             user=request.user,
             cantidad=1,
+            confirmado=False,
         )
         item.save()
     else:
