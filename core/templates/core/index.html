@@ -1,35 +1,47 @@
 {% extends 'core/base.html' %}
-
 {% block title %}Home{% endblock title %}
 {% load static %}
 
 <!-- Content -->
 {% block content %}
+
 <header>
-    <div class="header_text">
-        <h1>Cuchuflito Electronics</h1>
-    </div>
+        <h1 class="text-center">Cuchuflito Electronics</h1>
 </header>
 
-<div class=presentation>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe eos omnis laudantium nam quasi reiciendis ab accusamus labore. Nostrum cum magnam eveniet quibusdam necessitatibus dicta ea sint quas aperiam porro!
-    Voluptate doloribus quis atque, omnis aut, facere praesentium pariatur distinctio dolor necessitatibus beatae amet, consequuntur vel est aliquid ex adipisci architecto expedita dignissimos ipsum quasi optio. Ducimus reprehenderit soluta harum?
-    Explicabo earum neque dignissimos soluta, voluptas non, consequatur, placeat libero maxime assumenda quis debitis ad tempora? Similique iusto pariatur culpa animi nam possimus et cupiditate. Nemo laudantium error hic culpa!
-   quas odio, laborum veniam similique atque, modi adipisci, maxime recusandae repudiandae fugiat. Repudiandae maiores porro laborum consequatur labore.</p>
-</div>
-
-<h2>OFERTAS</h2>
-{% for item in productoss %}
-<div class="container">
-  <div class="row ">
-    <div class="col-8">
-      <li style=" width: 60%;" >  <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" src="{{item.image.url}}" alt="{{product.codename}}.jpg" class= "img-fluid"></li>
-    <li style="color:red; font-weight:bold;">{{ item.name }}  a solo {{ item.price }} !!</li>
-    <hr>
+<div class= "container-fluid">
+    <div class="row">
+        <div class="col-md-9">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe eos omnis laudantium nam quasi reiciendis ab accusamus labore. Nostrum cum magnam eveniet quibusdam necessitatibus dicta ea sint quas aperiam porro!
+                Voluptate doloribus quis atque, omnis aut, facere praesentium pariatur distinctio dolor necessitatibus beatae amet, consequuntur vel est aliquid ex adipisci architecto expedita dignissimos ipsum quasi optio. Ducimus reprehenderit soluta harum?
+                Explicabo earum neque dignissimos soluta, voluptas non, consequatur, placeat libero maxime assumenda quis debitis ad tempora? Similique iusto pariatur culpa animi nam possimus et cupiditate. Nemo laudantium error hic culpa!
+                Maiores unde dolores beatae error, suscipit eum quibusdam esse facere, nulla libero possimus numquam eaque ab, laboriosam non saepe nihil. Libero incidunt eveniet pariatur doloremque, at sed nemo nisi explicabo.
+                Hic architecto doloribus quaerat consectetur incidunt soluta sit enim saepe quod, in tenetur iure maxime labore est temporibus esse, vitae alias! Maxime fugiat quae mollitia libero magnam sint maiores incidunt.
+                Magni excepturi magnam harum inventore assumenda nam omnis quod quis consequatur ab. Reiciendis voluptatem quo iste, in omnis natus quis aperiam laudantium dolorum voluptatibus dicta architecto cumque doloribus! Nam, a.
+                Molestias dignissimos mollitia similique, excepturi eaque porro nulla modi, a eveniet quasi perspiciatis at animi dolorum velit. Porro nesciunt quidem, tempora incidunt eius reprehenderit ut et ratione placeat atque earum.
+                Unde asperiores amet delectus libero corrupti tempora accusantium, ex mollitia quam ipsa voluptatem consequatur sunt. Veritatis praesentium provident sapiente eum asperiores voluptatibus, repellendus dolor suscipit expedita quam amet inventore nemo?
+                Explicabo laudantium et, dolor nihil eaque quia consequuntur esse cupiditate excepturi molestiae provident, repellendus a minima. Odit, nam eius fuga voluptatem soluta ipsa voluptates dolore accusantium magni rem modi porro!
+                Dolor sapiente nihil qui distinctio ipsum molestiae ducimus. Quibusdam ut molestias et quas odio, laborum veniam similique atque, modi adipisci, maxime recusandae repudiandae fugiat. Repudiandae maiores porro laborum consequatur labore.</p>
+        </div>
+        <div class="col-md-3">
+            {% if user.is_authenticated %}
+            <h2 class="text-center">OFERTAS</h2>
+            {% endif %}
+            {% for item in ofertas %}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <div class="row" style=" width: 60%;" ><img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" src="{{item.image.url}}" alt="{{product.codename}}.jpg" class= "img-fluid"></div>
+                        {% if user.is_authenticated %}
+                        <div style="color:red; font-weight:bold;">{{ item.name }}  a solo {{ item.price }} !!</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </ul>
     </div>
 </div>
 </div>
-{% endfor %}
-</ul>
 {% endblock content %}
 

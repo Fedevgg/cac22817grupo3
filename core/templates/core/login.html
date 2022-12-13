@@ -16,10 +16,8 @@
             </div>
             <form method="POST" style="border-radius:1%;">
                 {% csrf_token %}
-                <fieldset class="form-group">
-                  {{ form }}
-                  <button class="btn btn-dark" type="submit"> Login</button>
-                </fieldset>
+                {{ form }}
+                <button class="btn btn-dark mt-4 mb-4" type="submit"> Login</button>
               <a href="{% url 'registrarse' %}"> si no tiene una cuenta, registrese</a>
             </form>
         </div>

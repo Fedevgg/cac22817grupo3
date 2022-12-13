@@ -5,10 +5,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from core.forms import RegistrarUsuarioForm
 from products.models import Product
+
 # Create your views here.
 def index(request):
-    items = Product.objects.all()  
-    return render(request, 'core/index.html', {'productoss':items})
+    items = Product.objects.filter(with_discount=True)  
+    return render(request, 'core/index.html', {'ofertas':items})
 
 def somos(request):
     return render(request, "core/somos.html")

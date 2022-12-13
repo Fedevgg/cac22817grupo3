@@ -27,15 +27,12 @@
     </div>
     <div>{{campo.errors}}</div>
 {% endfor %}
-<div class="row mt-3">
-    <div class="col-12">
-        <input type="submit" value="Registrarse" class="btn btn-success">
-        <a href="{% url 'login' %}"> si ya tenes una cuenta, logueate.</a>
+    <div class="row mt-3">
+        <div class="col-12">
+            <input type="submit" value="Registrarse" class="btn btn-success">
+            <a href="{% url 'login' %}"> si ya tenes una cuenta, logueate.</a>
+        </div>
     </div>
-</div>
-    {% comment %} <fieldset class="form-group">
-      {{ form }}
-    </fieldset> {% endcomment %}
   </form>
 </div>
 {% endblock content %}
