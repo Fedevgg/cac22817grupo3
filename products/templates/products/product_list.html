@@ -3,10 +3,8 @@
 {% block navbar %}{% endblock %}
 {% block content %}
 <header>
-    <div class="header_text">
-        <h1>Catálogo de productos</h1>
-        <p>A continuación están nuestros productos en oferta</p>
-    </div>
+        <h1 class="text-center">Catálogo de productos</h1>
+        <p class="text-center">A continuación están nuestros productos en oferta</p>
 </header>
 
 <div class="album py-5 bg-light">
@@ -21,7 +19,6 @@
                         <p class="card-text mb-1 text-center">{{product.name}} marca {{product.brand}}</p>
                         {% if user.is_authenticated %}
                         <p class="card-text mb-1 text-center">Precio de contado: ${{product.price}} más iva</p>
-                        <!--agregar referencia a la funcion add del carrito-->
                         <a href="{% url 'catalog:agregar' product.id %}" class= "btn btn-success">Añadir 1 al carrito</a>
                         {% endif %}
                         </div>
