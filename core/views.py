@@ -4,11 +4,11 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from core.forms import RegistrarUsuarioForm
-
+from products.models import Product
 # Create your views here.
-
 def index(request):
-    return render(request, "core/index.html")
+    items = Product.objects.all()  
+    return render(request, 'core/index.html', {'productoss':items})
 
 def somos(request):
     return render(request, "core/somos.html")
