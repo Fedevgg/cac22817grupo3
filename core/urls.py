@@ -9,4 +9,5 @@ core_patterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('login/', views.core_login, name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='core/index.html'), name='logout'),
+    path('somos/', views.somos, name='somos'),
 ]
