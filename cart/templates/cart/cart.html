@@ -1,8 +1,10 @@
 {% extends 'core/base.html' %}
 {% block content %}
+<header>
+  <h1 class="text-center">  Carrito de Compras:</h1>
+</header>
 <div class="container-fluid">
   <div class="row" style="margin-bottom: 20px">
-    <h3 class="col-3 text-center">  Carrito de Compras:</h3>
     <div class="col-3 text-center"> 
         <a href="{% url 'limpiar' %}" class= "btn btn-warning" style=" width: 70%; margin: 0.01rem;">Limpiar el carrito</a>
     </div>
