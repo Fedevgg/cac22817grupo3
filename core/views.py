@@ -10,6 +10,9 @@ from core.forms import RegistrarUsuarioForm
 def index(request):
     return render(request, "core/index.html")
 
+def somos(request):
+    return render(request, "core/somos.html")
+
 def contact(request):
     data = {
         'form': ContactForm()
