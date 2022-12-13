@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'products.apps.ProductsConfig',
-    'ckeditor',
     'cart',
 ]
 
@@ -123,6 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT ='/home/fedevgg/TPOdjango/core/static'
 
 # Media Files
 MEDIA_URL = '/uploads/'
